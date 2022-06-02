@@ -13,3 +13,15 @@ class TwoNumberSum:
                 if x+y == expectedSum:
                     return [x,y]
         return []
+
+    def run_approach_two(self, array, expectedSum):
+        if self.ensure_input_is_correct(array) == False:
+            raise ValueError("Input array cannot be empty")
+        nums = {}
+        for x in array:
+            num = expectedSum - x
+            if num in nums:
+                return [x,num]
+            else:
+                nums[x] = True
+        return []
