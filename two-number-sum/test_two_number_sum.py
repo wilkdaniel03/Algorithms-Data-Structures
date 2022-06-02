@@ -14,7 +14,8 @@ class TestTwoNumberSum(unittest.TestCase):
         pass
 
     def test_result_approach_one(self):
-        pass
+        my_two_number_sum = two_number_sum.TwoNumberSum()
+        self.assertEqual([1,4], my_two_number_sum.run_approach_one([1,2,3,4,5], 5))
 
     def test_result_approach_two(self):
         pass
