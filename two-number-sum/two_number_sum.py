@@ -29,6 +29,7 @@ class TwoNumberSum:
     def run_approach_three(self, array, expectedSum):
         if self.ensure_input_is_correct(array) == False:
             raise ValueError("Input array cannot be empty")
+        array.sort()
         left = 0
         right = len(array)-1
         while right<len(array)-1 and left<right:
