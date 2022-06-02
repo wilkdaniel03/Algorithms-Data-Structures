@@ -25,3 +25,18 @@ class TwoNumberSum:
             else:
                 nums[x] = True
         return []
+
+    def run_approach_three(self, array, expectedSum):
+        if self.ensure_input_is_correct(array) == False:
+            raise ValueError("Input array cannot be empty")
+        left = 0
+        right = len(array)-1
+        while right<len(array)-1 and left<right:
+            result = array[left]+array[right]
+            if result == expectedSum:
+                return [array[left],array[right]]
+            elif result<expectedSum:
+                left += 1
+            elif result>expectedSum:
+                right -= 1
+        return []
