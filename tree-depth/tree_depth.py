@@ -22,3 +22,8 @@ def treeDepthUsingIteration(root):
         stack.append({"node": node.left, "depth": depth + 1})
         stack.append({"node": node.right, "depth": depth + 1})
     return depthSums
+
+def treeDepthUsingRecursion(node, depth = 0):
+    if node is None:
+        return 0
+    return treeDepthUsingRecursion(node.left, depth + 1) + treeDepthUsingRecursion(node.right, depth + 1)
